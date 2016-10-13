@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var paintBucket: UIImageView!
     // TODO: Setup the IBOutlets
     
     override func viewDidLoad() {
@@ -38,10 +41,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
+        mixColors(first: <#T##String#>, second: <#T##String#>)
+        /*TODO:
+         - Need to pull the segment values and conver it to the color string.
+         - Figure out how to make both fire the value and into what, which gets sent to mixColors.
+         - Under this IBAction func, call two IBOutlet vars of the segments and have them active here, then dump it into mixColors function. Linking two actions to the same control.
+         */
         
-        // TODO: Implement this function according to the instructions.
         
         
     }
 
+    /*
+     let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+     let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
+     */
+    
 }
