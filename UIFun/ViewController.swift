@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
     @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
     @IBOutlet weak var paintBucket: UIImageView!
-    // TODO: Setup the IBOutlets
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,20 +40,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        mixColors(first: <#T##String#>, second: <#T##String#>)
-        /*TODO:
-         - Need to pull the segment values and conver it to the color string.
-         - Figure out how to make both fire the value and into what, which gets sent to mixColors.
-         - Under this IBAction func, call two IBOutlet vars of the segments and have them active here, then dump it into mixColors function. Linking two actions to the same control.
-         */
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
+        let distVar = (firstSelection, secondSelection)
         
-        
-        
+        switch distVar {
+        case let distVar where distVar == (0, 0):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
+        case let distVar where distVar == (0, 1):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+        case let distVar where distVar == (1, 0):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Red")
+        case let distVar where distVar == (0, 2):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+        case let distVar where distVar == (2, 0):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Red")
+        case let distVar where distVar == (1, 1):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Yellow")
+        case let distVar where distVar == (1, 2):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
+        case let distVar where distVar == (2, 1):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Yellow")
+        case let distVar where distVar == (2, 2):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Blue")
+        default:
+            paintBucket.backgroundColor = UIColor.white
+        }
     }
-
-    /*
-     let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
-     let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
-     */
-    
+    // Could have used switch true and switch distVar with case _
 }
