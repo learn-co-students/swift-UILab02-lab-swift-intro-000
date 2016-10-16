@@ -12,8 +12,14 @@ class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
     
+    @IBOutlet weak var paintTub: UIImageView!
+    var firstColor:String = "White"
+    var secondColor:String = "White"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       paintTub.backgroundColor = UIColor.white
     }
 
     func mixColors(first: String, second: String) -> UIColor {
@@ -40,8 +46,18 @@ class ViewController: UIViewController {
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
         // TODO: Implement this function according to the instructions.
+        firstColor = sender.titleForSegment(at: sender.selectedSegmentIndex)!
         
-        
+        paintTub.backgroundColor = mixColors(first: firstColor, second: secondColor)
     }
 
+    @IBAction func colorSelected2(_ sender: UISegmentedControl) {
+        secondColor = sender.titleForSegment(at: sender.selectedSegmentIndex)!
+        
+        paintTub.backgroundColor = mixColors(first: firstColor , second: secondColor)
+    }
+    
+    
+    
+    
 }
