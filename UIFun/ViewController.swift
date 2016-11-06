@@ -52,6 +52,7 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
+        
         let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
         let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
         
@@ -62,12 +63,12 @@ class ViewController: UIViewController {
         case (0, 0):
             paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
             
-        case (0, 1):
+        case (0, 1), (1, 0):
             
             paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
             
             
-        case (0, 2):
+        case (0, 2), (2, 0):
             
             paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
             
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
             
             
             
-        case (1, 2):
+        case (1, 2), (2,1):
             
             paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
             
@@ -89,6 +90,9 @@ class ViewController: UIViewController {
         default:
             
             break
+            
+            
+            print(firstColorSegmentedControl, secondColorSegmentedControl)
         }
         
 
