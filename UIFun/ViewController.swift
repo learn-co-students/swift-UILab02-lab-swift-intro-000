@@ -15,7 +15,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    
+    @IBOutlet weak var paintBucket: UIImageView!
 
+    
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var secondColorSegementedControl: UISegmentedControl!
+    
     func mixColors(first: String, second: String) -> UIColor {
         
         switch (first, second) {
@@ -37,11 +46,40 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegementedControl.selectedSegmentIndex
+        
+        switch (true) {
+        case (firstSelection == 0 && secondSelection == 0):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
+        case (firstSelection == 0 &&  secondSelection == 1):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+        case (firstSelection == 0 && secondSelection == 2):
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+        case (firstSelection == 1 && secondSelection == 0):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Red")
+        case (firstSelection == 1 && secondSelection == 1):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Yellow")
+        case (firstSelection == 1 && secondSelection == 2):
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
+        case (firstSelection == 2 && secondSelection == 0):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Red")
+        case (firstSelection == 2 && secondSelection == 1):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Yellow")
+        case (firstSelection == 2 && secondSelection == 2):
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Blue")
+            
+            
+        default:
+            paintBucket.backgroundColor = mixColors(first: "White", second: "White")
+        }
+        
+        
         
         
     }
-
 }
