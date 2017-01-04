@@ -11,12 +11,21 @@ import UIKit
 extension UIColor {
     var name: String {
         switch self {
+<<<<<<< HEAD:UIFun/ColorExtras.swift
         case UIColor.red: return "red"
         case UIColor.blue: return "blue"
         case UIColor.yellow: return "yellow"
         case UIColor.purple: return "purple"
         case UIColor.orange: return "orange"
         case UIColor.green: return "green"
+=======
+        case UIColor.redColor(): return "red"
+        case UIColor.blueColor(): return "blue"
+        case UIColor.yellowColor(): return "yellow"
+        case UIColor.purpleColor(): return "purple"
+        case UIColor.orangeColor(): return "orange"
+        case UIColor.greenColor(): return "green"
+>>>>>>> origin/solution:UIFun/UIFun/ColorExtras.swift
         default: assert(false, "Invalid paint color: \(self)")
         }
     }
