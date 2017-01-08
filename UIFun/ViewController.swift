@@ -12,36 +12,52 @@ class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
     
+    @IBOutlet weak var bret: UISegmentedControl!
+    @IBOutlet weak var heather: UISegmentedControl!
+    @IBOutlet weak var calvin: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bret.setTitle("Red", forSegmentAt: 0)
+        bret.setTitle("Yellow", forSegmentAt: 1)
+        bret.setTitle("Blue", forSegmentAt: 2)
+        heather.setTitle("Red", forSegmentAt: 0)
+        heather.setTitle("Yellow", forSegmentAt: 1)
+        heather.setTitle("Blue", forSegmentAt: 2)
     }
-
-    func mixColors(first: String, second: String) -> UIColor {
+    
+/*
+    func mixColors(_ sender1: UISegmentedControl,_ sender2: UISegmentedControl) -> UIColor {
+        
+     i got rid of this because i wanted to do everything in one function
+     
+        }
+    }
+  */
+    
+    @IBAction func disregardBeatHappening () {
+        
+        //they have a B side called "don't mix the colors"
+        
+        let first = bret.titleForSegment(at: bret.selectedSegmentIndex)!
+        let second = heather.titleForSegment(at: heather.selectedSegmentIndex)!
         
         switch (first, second) {
         case ("Red", "Red"):
-            return UIColor.red
+            calvin.backgroundColor = UIColor.red
         case ("Red", "Yellow"), ("Yellow", "Red"):
-            return UIColor.orange
+            calvin.backgroundColor =  UIColor.orange
         case ("Red", "Blue"), ("Blue", "Red"):
-            return UIColor.purple
+            calvin.backgroundColor =  UIColor.purple
         case ("Yellow", "Yellow"):
-            return UIColor.yellow
+            calvin.backgroundColor =  UIColor.yellow
         case ("Yellow", "Blue"), ("Blue", "Yellow"):
-            return UIColor.green
+            calvin.backgroundColor =  UIColor.green
         case ("Blue", "Blue"):
-            return UIColor.blue
+            calvin.backgroundColor =  UIColor.blue
         default:
-            return UIColor.white
-        }
-        
+            calvin.backgroundColor =  UIColor.white
+              }
     }
-    
-    @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        
-        // TODO: Implement this function according to the instructions.
-        
-        
-    }
-
 }
