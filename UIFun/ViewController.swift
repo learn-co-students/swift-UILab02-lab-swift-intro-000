@@ -12,49 +12,52 @@ class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
     
-    @IBOutlet weak var colorPickYourNose: UISegmentedControl!
-    @IBOutlet weak var colorPickYourFriendsNose: UISegmentedControl!
-    @IBOutlet weak var mrBucket: UIImageView!
+    @IBOutlet weak var bret: UISegmentedControl!
+    @IBOutlet weak var heather: UISegmentedControl!
+    @IBOutlet weak var calvin: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorPickYourNose.setTitle("Red", forSegmentAt: 0)
-        colorPickYourNose.setTitle("Yellow", forSegmentAt: 1)
-        colorPickYourNose.setTitle("Blue", forSegmentAt: 2)
-        colorPickYourFriendsNose.setTitle("Red", forSegmentAt: 0)
-        colorPickYourFriendsNose.setTitle("Yellow", forSegmentAt: 1)
-        colorPickYourFriendsNose.setTitle("Blue", forSegmentAt: 2)
+        bret.setTitle("Red", forSegmentAt: 0)
+        bret.setTitle("Yellow", forSegmentAt: 1)
+        bret.setTitle("Blue", forSegmentAt: 2)
+        heather.setTitle("Red", forSegmentAt: 0)
+        heather.setTitle("Yellow", forSegmentAt: 1)
+        heather.setTitle("Blue", forSegmentAt: 2)
     }
     
 /*
     func mixColors(_ sender1: UISegmentedControl,_ sender2: UISegmentedControl) -> UIColor {
         
-        
+     i got rid of this because i wanted to do everything in one function
+     
         }
     }
   */
     
     @IBAction func disregardBeatHappening () {
         
-        let first = colorPickYourNose.titleForSegment(at: colorPickYourNose.selectedSegmentIndex)
-        let second = colorPickYourFriendsNose.titleForSegment(at: colorPickYourFriendsNose.selectedSegmentIndex)
+        //they have a B side called "don't mix the colors"
+        
+        let first = bret.titleForSegment(at: bret.selectedSegmentIndex)!
+        let second = heather.titleForSegment(at: heather.selectedSegmentIndex)!
         
         switch (first, second) {
-        case ("Red"?, "Red"?) , (nil, "Red"?), ("Red"?, nil):
-            mrBucket.backgroundColor = UIColor.red
-        case ("Red"?, "Yellow"?), ("Yellow"?, "Red"?):
-            mrBucket.backgroundColor =  UIColor.orange
-        case ("Red"?, "Blue"?), ("Blue"?, "Red"?):
-            mrBucket.backgroundColor =  UIColor.purple
-        case ("Yellow"?, "Yellow"?), (nil, "Yellow"?) , ("Yellow"?, nil):
-            mrBucket.backgroundColor =  UIColor.yellow
-        case ("Yellow"?, "Blue"?), ("Blue"?, "Yellow"?):
-            mrBucket.backgroundColor =  UIColor.green
-        case ("Blue"?, "Blue"?), (nil , "Blue"?), ("Blue"?, nil):
-            mrBucket.backgroundColor =  UIColor.blue
+        case ("Red", "Red"):
+            calvin.backgroundColor = UIColor.red
+        case ("Red", "Yellow"), ("Yellow", "Red"):
+            calvin.backgroundColor =  UIColor.orange
+        case ("Red", "Blue"), ("Blue", "Red"):
+            calvin.backgroundColor =  UIColor.purple
+        case ("Yellow", "Yellow"):
+            calvin.backgroundColor =  UIColor.yellow
+        case ("Yellow", "Blue"), ("Blue", "Yellow"):
+            calvin.backgroundColor =  UIColor.green
+        case ("Blue", "Blue"):
+            calvin.backgroundColor =  UIColor.blue
         default:
-            mrBucket.backgroundColor =  UIColor.white
+            calvin.backgroundColor =  UIColor.white
               }
     }
 }

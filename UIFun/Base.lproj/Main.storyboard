@@ -49,9 +49,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="colorPickYourFriendsNose" destination="Wxg-3S-6ZD" id="o5N-N1-ETd"/>
-                        <outlet property="colorPickYourNose" destination="s7G-ji-8Ca" id="U2j-81-GtA"/>
-                        <outlet property="mrBucket" destination="nF5-NX-8kc" id="eeA-oZ-6Ps"/>
+                        <outlet property="bret" destination="Wxg-3S-6ZD" id="Afo-69-PI8"/>
+                        <outlet property="calvin" destination="nF5-NX-8kc" id="KcA-eS-UKW"/>
+                        <outlet property="heather" destination="s7G-ji-8Ca" id="0by-XK-U5F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
