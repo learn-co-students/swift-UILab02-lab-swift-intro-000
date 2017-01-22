@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // TODO: Setup the IBOutlets
+    @IBOutlet weak var paintBucket : UIImageView!
+    @IBOutlet weak var aSegment : UISegmentedControl!
+    @IBOutlet weak var bSegment : UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +39,36 @@ class ViewController: UIViewController {
         
     }
     
+    func decodeColor (_ index:Int) -> String {
+        switch index {
+        case 0:
+            return "Red"
+        case 1:
+            return "Yellow"
+        case 2:
+            return "Blue"
+        default:
+            return "Unknown"
+        }
+    }
+    
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        var aColor : String
+        var bColor : String
+        var mixedColor : UIColor
         
+        aColor = decodeColor(aSegment.selectedSegmentIndex)
+        bColor = decodeColor(bSegment.selectedSegmentIndex)
         
+        print("aColor: " + aColor)
+        print("bColor: " + bColor)
+        
+        mixedColor = mixColors(first: aColor, second: bColor)
+        
+        print("mixedColor: " + mixedColor.name)
+        
+        paintBucket.paintColorName = mixedColor.name
     }
 
 }
