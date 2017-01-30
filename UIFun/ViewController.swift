@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
-    
+    @IBOutlet var paintBucket: UIImageView!
+    @IBOutlet var firstColorSegmentControl: UISegmentedControl!
+    @IBOutlet var secondColorSegmentControl: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    
     func mixColors(first: String, second: String) -> UIColor {
         
         switch (first, second) {
@@ -37,11 +41,28 @@ class ViewController: UIViewController {
         
     }
     
+    func colors(_ index: Int) -> String {
+        switch index {
+        case 0:
+            return "Red"
+        case 1:
+            return "Yellow"
+        case 2:
+            return "Blue"
+        default:
+            break
+        }
+        return ""
+    }
+    
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        
+        let firstSelection = firstColorSegmentControl.selectedSegmentIndex
+        let secondSelction = secondColorSegmentControl.selectedSegmentIndex
+        paintBucket.backgroundColor = mixColors(first: colors(firstSelection), second: colors(secondSelction))
         // TODO: Implement this function according to the instructions.
         
         
     }
+
 
 }
