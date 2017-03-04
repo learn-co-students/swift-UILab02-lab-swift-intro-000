@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // TODO: Setup the IBOutlets
+    @IBOutlet weak var paintBucket: UIImageView!
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +21,17 @@ class ViewController: UIViewController {
     func mixColors(first: String, second: String) -> UIColor {
         
         switch (first, second) {
-        case ("Red", "Red"):
+        case ("red", "red"):
             return UIColor.red
-        case ("Red", "Yellow"), ("Yellow", "Red"):
+        case ("red", "yellow"), ("yellow", "red"):
             return UIColor.orange
-        case ("Red", "Blue"), ("Blue", "Red"):
+        case ("red", "blue"), ("blue", "red"):
             return UIColor.purple
-        case ("Yellow", "Yellow"):
+        case ("yellow", "yellow"):
             return UIColor.yellow
-        case ("Yellow", "Blue"), ("Blue", "Yellow"):
+        case ("yellow", "blue"), ("blue", "yellow"):
             return UIColor.green
-        case ("Blue", "Blue"):
+        case ("blue", "blue"):
             return UIColor.blue
         default:
             return UIColor.white
@@ -39,7 +41,15 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        if let firstSelection = firstColorSegmentedControl.titleForSegment(at: firstColorSegmentedControl.selectedSegmentIndex),
+           let secondSelection = secondColorSegmentedControl.titleForSegment(at: secondColorSegmentedControl.selectedSegmentIndex) {
+            let first = firstSelection.lowercased()
+            let second = secondSelection.lowercased()
+            
+            let color = mixColors(first: first, second: second)
+            
+            paintBucket.backgroundColor = color
+        }
         
         
     }
