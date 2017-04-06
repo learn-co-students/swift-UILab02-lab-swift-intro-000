@@ -9,39 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    // TODO: Setup the IBOutlets
+  
+  // TODO: Setup the IBOutlets
+  @IBOutlet weak var paintBucket: UIImageView!
+  @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+  @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    func mixColors(first: String, second: String) -> UIColor {
-        
-        switch (first, second) {
-        case ("Red", "Red"):
-            return UIColor.red
-        case ("Red", "Yellow"), ("Yellow", "Red"):
-            return UIColor.orange
-        case ("Red", "Blue"), ("Blue", "Red"):
-            return UIColor.purple
-        case ("Yellow", "Yellow"):
-            return UIColor.yellow
-        case ("Yellow", "Blue"), ("Blue", "Yellow"):
-            return UIColor.green
-        case ("Blue", "Blue"):
-            return UIColor.blue
-        default:
-            return UIColor.white
-        }
-        
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+  }
+  
+  func mixColors(first: String, second: String) -> UIColor {
+    
+    switch (first, second) {
+    case ("Red", "Red"):
+      return UIColor.red
+    case ("Red", "Yellow"), ("Yellow", "Red"):
+      return UIColor.orange
+    case ("Red", "Blue"), ("Blue", "Red"):
+      return UIColor.purple
+    case ("Yellow", "Yellow"):
+      return UIColor.yellow
+    case ("Yellow", "Blue"), ("Blue", "Yellow"):
+      return UIColor.green
+    case ("Blue", "Blue"):
+      return UIColor.blue
+    default:
+      return UIColor.white
     }
     
-    @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        
-        // TODO: Implement this function according to the instructions.
-        
-        
-    }
+  }
+  
+  @IBAction func colorSelected(_ sender: UISegmentedControl) {
+    
+    // TODO: Implement this function according to the instructions.
+    let paintColor: Dictionary<Int, String> = [0: "Red", 1: "Yellow", 2: "Blue"]
+    
+    let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+    let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
 
+    print("\(firstSelection) - \(secondSelection)")
+    if firstSelection >= 0 && secondSelection >= 0 {
+      paintBucket.backgroundColor = mixColors(first: paintColor[firstSelection]!, second: paintColor[secondSelection]!)
+    }
+  }
 }
