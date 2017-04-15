@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A7B578408B392B8C15E4FED27141447B58C130B7+++DC5D20D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A7B578408B392B8C15E4FED27141447B58C130B7+++3896B75" : 9223372036854775807,
+    "A7B578408B392B8C15E4FED27141447B58C130B7+++DC5D20D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "13C9246E-13CE-422C-A771-C5A5695F356A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A7B578408B392B8C15E4FED27141447B58C130B7+++3896B75" : "",
+    "A7B578408B392B8C15E4FED27141447B58C130B7+++DC5D20D" : "swift-UILab02-lab-swift-intro-000\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/learn-co-students\/swift-UILab02-lab-swift-intro-000.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A7B578408B392B8C15E4FED27141447B58C130B7+++3896B75"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:maximaleks\/swift-UILab02-lab-swift-intro-000.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A7B578408B392B8C15E4FED27141447B58C130B7+++DC5D20D"
+    }
+  ]
+}
