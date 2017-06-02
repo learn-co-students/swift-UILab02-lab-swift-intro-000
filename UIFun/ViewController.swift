@@ -10,7 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // TODO: Setup the IBOutlets
+   
+    @IBOutlet weak var paintBucket: UIImageView!
+    
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
+    
+    var colorCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +46,37 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
         
+        switch Int(firstSelection){
+        case 0:
+            if secondSelection == 0{
+                paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
+            } else if secondSelection == 1{
+                paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+            } else if secondSelection ==  2{
+                paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+            }
+        case 1:
+            if secondSelection == 0{
+                paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Red")
+            } else if secondSelection == 1{
+                paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Yellow")
+            } else if secondSelection ==  2{
+                paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
+            }
+        case 2:
+            if secondSelection == 0{
+                paintBucket.backgroundColor = mixColors(first: "Blue", second: "Red")
+            } else if secondSelection == 1{
+                paintBucket.backgroundColor = mixColors(first: "Blue", second: "Yellow")
+            } else if secondSelection ==  2{
+                paintBucket.backgroundColor = mixColors(first: "Blue", second: "Blue")
+            }
+        default:
+            paintBucket.backgroundColor = UIColor.white
+        }
         
     }
 
