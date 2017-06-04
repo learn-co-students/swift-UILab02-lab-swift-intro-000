@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // TODO: Setup the IBOutlets
+
+    @IBOutlet weak var paintBucket: UIImageView!
+
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +43,42 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
-        
+        if firstColorSegmentedControl.selectedSegmentIndex==0 && secondColorSegmentedControl.selectedSegmentIndex==0
+        {
+            paintBucket.backgroundColor=mixColors(first: "Red", second: "Red")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==0 && secondColorSegmentedControl.selectedSegmentIndex==1
+        {
+            paintBucket.backgroundColor=mixColors(first: "Red", second: "Yellow")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==0 && secondColorSegmentedControl.selectedSegmentIndex==2
+        {
+            paintBucket.backgroundColor=mixColors(first: "Red", second: "Blue")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==1 && secondColorSegmentedControl.selectedSegmentIndex==0
+        {
+            paintBucket.backgroundColor=mixColors(first: "Yellow", second: "Red")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==1 && secondColorSegmentedControl.selectedSegmentIndex==1
+        {
+            paintBucket.backgroundColor=mixColors(first: "Yellow", second: "Yellow")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==1 && secondColorSegmentedControl.selectedSegmentIndex==2
+        {
+            paintBucket.backgroundColor=mixColors(first: "Yellow", second: "Blue")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==2 && secondColorSegmentedControl.selectedSegmentIndex==0
+        {
+            paintBucket.backgroundColor=mixColors(first: "Blue", second: "Red")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==2 && secondColorSegmentedControl.selectedSegmentIndex==1
+        {
+            paintBucket.backgroundColor=mixColors(first: "Blue", second: "Yellow")
+        }
+        else if firstColorSegmentedControl.selectedSegmentIndex==2 && secondColorSegmentedControl.selectedSegmentIndex==2
+        {
+            paintBucket.backgroundColor=mixColors(first: "Blue", second: "Blue")
+        }
         
     }
 
