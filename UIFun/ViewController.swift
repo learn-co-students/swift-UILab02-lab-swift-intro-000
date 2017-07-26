@@ -16,6 +16,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBOutlet weak var paintBucket: UIImageView!
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
+    
+
     func mixColors(first: String, second: String) -> UIColor {
         
         switch (first, second) {
@@ -25,9 +30,15 @@ class ViewController: UIViewController {
             return UIColor.orange
         case ("Red", "Blue"), ("Blue", "Red"):
             return UIColor.purple
-        case ("Yellow", "Yellow"):
+        case ("Yellow", "Red"):
+            return UIColor.orange
+        case ("Yellow", "Yellow"), ("Blue", "Yellow"):
             return UIColor.yellow
         case ("Yellow", "Blue"), ("Blue", "Yellow"):
+            return UIColor.green
+        case ("Blue", "Red"):
+            return UIColor.purple
+        case ("Blue", "Yellow"):
             return UIColor.green
         case ("Blue", "Blue"):
             return UIColor.blue
@@ -39,9 +50,36 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
         
-        
+        if (firstSelection == 0 && secondSelection == 0) {
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
+        }
+        if (firstSelection == 0 && secondSelection == 1) {
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+        }
+        if (firstSelection == 0 && secondSelection == 2) {
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+        }
+        if (firstSelection == 1 && secondSelection == 0) {
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Red")
+        }
+        if (firstSelection == 1 && secondSelection == 1) {
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Yellow")
+        }
+        if (firstSelection == 1 && secondSelection == 2) {
+            paintBucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
+        }
+        if (firstSelection == 2 && secondSelection == 0) {
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Red")
+        }
+        if (firstSelection == 2 && secondSelection == 1) {
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Yellow")
+        }
+        if (firstSelection == 2 && secondSelection == 2) {
+            paintBucket.backgroundColor = mixColors(first: "Blue", second: "Blue")
+        }
     }
 
 }
