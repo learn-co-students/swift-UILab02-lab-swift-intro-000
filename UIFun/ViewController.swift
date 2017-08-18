@@ -12,8 +12,16 @@ class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
     
+    @IBOutlet weak var bucket: UIImageView!
+    
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bucket.backgroundColor = UIColor.red
     }
 
     func mixColors(first: String, second: String) -> UIColor {
@@ -40,6 +48,46 @@ class ViewController: UIViewController {
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
         // TODO: Implement this function according to the instructions.
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
+        
+        switch firstSelection {
+        case 0:
+            switch secondSelection {
+            case 0:
+                bucket.backgroundColor = mixColors(first: "Red", second: "Red")
+            case 1:
+                bucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+            case 2:
+                bucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+            default:
+                print ("ERROR")
+            }
+        case 1:
+            switch secondSelection {
+            case 0:
+                bucket.backgroundColor = mixColors(first: "Yellow", second: "Red")
+            case 1:
+                bucket.backgroundColor = mixColors(first: "Yellow", second: "Yellow")
+            case 2:
+                bucket.backgroundColor = mixColors(first: "Yellow", second: "Blue")
+            default:
+                print ("ERROR")
+            }
+        case 2:
+            switch secondSelection {
+            case 0:
+                bucket.backgroundColor = mixColors(first: "Blue", second: "Red")
+            case 1:
+                bucket.backgroundColor = mixColors(first: "Blue", second: "Yellow")
+            case 2:
+                bucket.backgroundColor = mixColors(first: "Blue", second: "Blue")
+            default:
+                print ("ERROR")
+            }
+        default:
+            print("ERROR")
+        }
         
         
     }
