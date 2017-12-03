@@ -12,7 +12,6 @@
 		B74C97341D17540100D0EEA5 /* ColorExtras.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74C97331D17540100D0EEA5 /* ColorExtras.swift */; };
 		B7AAB9E71D174E6800826CCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AAB9E61D174E6800826CCC /* AppDelegate.swift */; };
 		B7AAB9EC1D174E6800826CCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AAB9EA1D174E6800826CCC /* Main.storyboard */; };
-		B7AAB9EE1D174E6800826CCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AAB9ED1D174E6800826CCC /* Assets.xcassets */; };
 		B7AAB9F11D174E6800826CCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AAB9EF1D174E6800826CCC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +22,6 @@
 		B7AAB9E31D174E6800826CCC /* UIFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AAB9E61D174E6800826CCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7AAB9EB1D174E6800826CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B7AAB9ED1D174E6800826CCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7AAB9F01D174E6800826CCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7AAB9F21D174E6800826CCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +59,6 @@
 				7D139A571D8DF98300F92686 /* ViewController.swift */,
 				B7AAB9E61D174E6800826CCC /* AppDelegate.swift */,
 				B7AAB9EA1D174E6800826CCC /* Main.storyboard */,
-				B7AAB9ED1D174E6800826CCC /* Assets.xcassets */,
 				B7AAB9EF1D174E6800826CCC /* LaunchScreen.storyboard */,
 				B7AAB9F21D174E6800826CCC /* Info.plist */,
 				B74C97311D17531900D0EEA5 /* PaintBucket.png */,
@@ -102,8 +99,8 @@
 				TargetAttributes = {
 					B7AAB9E21D174E6800826CCC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = JL54VFJL37;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -132,7 +129,6 @@
 			files = (
 				B74C97321D17531900D0EEA5 /* PaintBucket.png in Resources */,
 				B7AAB9F11D174E6800826CCC /* LaunchScreen.storyboard in Resources */,
-				B7AAB9EE1D174E6800826CCC /* Assets.xcassets in Resources */,
 				B7AAB9EC1D174E6800826CCC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +255,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIFun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatironschool.UIFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -271,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIFun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatironschool.UIFun;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
