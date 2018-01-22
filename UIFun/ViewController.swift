@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBOutlet var paintBucket: UIView!
+    
     func mixColors(first: String, second: String) -> UIColor {
         
         switch (first, second) {
@@ -39,9 +41,21 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        // TODO: Implement this function according to the instructions.
+        let choice1 = sender.selectedSegmentIndex
+        let choice2 = sender.selectedSegmentIndex
         
+        if choice1 == 0 && choice2 == 0 {
+            
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Red")
+            
+        } else if choice1 == 0 && choice2 == 1{
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Yellow")
+            
+        } else if choice1 == 0 && choice2 == 2{
+            paintBucket.backgroundColor = mixColors(first: "Red", second: "Blue")
+        }
         
     }
+
 
 }
