@@ -12,6 +12,10 @@ class ViewController: UIViewController {
 
     // TODO: Setup the IBOutlets
     
+    @IBOutlet weak var paintBucket: UIImageView!
+    @IBOutlet weak var firstColorSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var secondColorSegmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -38,9 +42,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        
         // TODO: Implement this function according to the instructions.
+        let firstSelection = firstColorSegmentedControl.selectedSegmentIndex
+        let secondSelection = secondColorSegmentedControl.selectedSegmentIndex
         
+        var paintColor: (first: String, second: String){
+            switch (firstSelection, secondSelection) {
+            case (0, 0):
+                return ("Red","Red")
+            case (0, 1):
+                return ("Red", "Yellow")
+            case (1, 0):
+                return ("Yellow", "Red")
+            case (0, 2):
+                return ("Red", "Blue")
+            case (2, 0):
+                return ("Blue", "Red")
+            case (1, 1):
+                return ("Yellow", "Yellow")
+            case (1, 2):
+                return ("Yellow", "Blue")
+            case (2, 1):
+                return ("Blue", "Yellow")
+            case (2, 2):
+                return ("Blue", "Blue")
+            default:
+                return ("White", "White")
+            }
+        }
+        
+        // So I know I can pass multiple args in the switch case by (foo1, foo2), (foo2, foo1) but there is no way to have the return be multiple and select the correct one is there?
+        
+        paintBucket.backgroundColor = mixColors(first: paintColor.first, second: paintColor.second)
         
     }
 
