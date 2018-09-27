@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    // TODO: Setup the IBOutlets
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +35,20 @@ class ViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var paintBucket: UIImageView!
+    
+    @IBAction func firstColorSegmentedControl(_ sender: UISegmentedControl) {
+      var firstSelection = sender.selectedSegmentIndex
+    }
+    
+    
+    
+    @IBAction func secondColorSegmentedControl(_ sender: UISegmentedControl) {
+     
+    }
+    
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
-        
-        // TODO: Implement this function according to the instructions.
-        
+       
         
     }
 
